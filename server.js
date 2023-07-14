@@ -4,10 +4,10 @@ import cloudinary from "cloudinary";
 import RazorPay from "razorpay";
 import nodeCron from "node-cron";
 import { Stats } from "./modals/Stats.js";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import path from 'path';
-import express from "express";
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
+// import path from 'path';
+// import express from "express";
 
 connectDB();
 
@@ -33,14 +33,14 @@ nodeCron.schedule('0 0 0 5 * *', async () => { //This will run every 5th of mont
 });
 
 //Static file access
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
-app.use(express.static(path.join(__dirname, '../coursehubfrontend/build' )));
+// app.use(express.static(path.join(__dirname, '../coursehubfrontend/build' )));
 
-app.get('*',(req,res)=>{
-  res.sendFile(path.join(__dirname, '../coursehubfrontend/build/index.html'));
-});
+// app.get('*',(req,res)=>{
+//   res.sendFile(path.join(__dirname, '../coursehubfrontend/build/index.html'));
+// });
 
 
 
