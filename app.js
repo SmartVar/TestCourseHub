@@ -26,7 +26,8 @@ app.use(cookieParser()); //This is used to destructure the cookie token get from
 //The below code is required to access the frontend from backend
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, //only this website will access below method
+    // origin: process.env.FRONTEND_URL, //only this website will access below method
+    origin: "https://coursehub-hazel.vercel.app",
     credentials: true, //mandatory true otherwise cookies cannot be access
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
